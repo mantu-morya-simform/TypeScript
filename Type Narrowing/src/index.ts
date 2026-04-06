@@ -200,7 +200,6 @@ try {
 //in this situation
 const data: unknown = "chai aor code ";
 const strData: string = data as string;
-
 // never datatype
 
 type Role = "admin" | "user";
@@ -217,3 +216,11 @@ const redirectBasedOnRole = (role: Role): void => {
 
   role; //this is never type cause it never hit
 };
+
+// never return Type
+
+function neverReturn(): never {
+  while (true) {
+    console.log("i am Always run");
+  }
+}
