@@ -1,26 +1,52 @@
+/**
+ * Prints a chai order object with inline type annotations.
+ *
+ * @param {{type: string; suger: number; strong: boolean}} order - The chai order.
+ */
 function makeChai(order: { type: string; suger: number; strong: boolean }) {
   console.log(order);
 }
 
+/**
+ * Logs a chai order object with inline type annotations.
+ *
+ * @param {{type: string; suger: number; strong: boolean}} order - The chai order.
+ */
 function serveChai(order: { type: string; suger: number; strong: boolean }) {
   console.log(order);
 } //here both signature is matched so at that time we create aliyas with type or interface
 
+/**
+ * Type alias for a chai order.
+ */
 type chaiOrder = {
   type: string;
   suger: number;
   strong: boolean;
 };
 
+/**
+ * Prints a chai order object using a type alias.
+ *
+ * @param {chaiOrder} order - The chai order.
+ */
 function makeChai1(order: chaiOrder) {
   console.log(order);
 }
 
+/**
+ * Logs a chai order object using a type alias.
+ *
+ * @param {chaiOrder} order - The chai order.
+ */
 function serveChai1(order: chaiOrder) {
   console.log(order);
 } //so here both signature is same thats why i created type aliyas and pass in both function
 
 // we face issue with type
+/**
+ * Type for tea recipe with water and milk.
+ */
 type teaRecipe = {
   water: number;
   milk: number;
@@ -33,6 +59,9 @@ interface teaRecipe {
 }    //converted as interface
 */
 
+/**
+ * Class implementing teaRecipe for masala chai.
+ */
 class masalaChai implements teaRecipe {
   water = 50;
   milk = 50;
@@ -43,10 +72,16 @@ class masalaChai implements teaRecipe {
 // class chai implements cupSize {} // this is not allowed with type so that`s why we are using interface instead of type in the simmiler situation
 */
 
+/**
+ * Interface for cup size.
+ */
 interface cupSize {
   size: "small" | "large";
 }
 
+/**
+ * Class implementing cupSize for chai serving.
+ */
 class chai implements cupSize {
   size: "small" | "large" = "large";
   serveChai() {
@@ -61,8 +96,19 @@ giveChai.serveChai();
 
 //type intersection (combine type)
 
+/**
+ * Base chai type with tea leaves.
+ */
 type baseChai = { teaLeaves: number };
+
+/**
+ * Extra chai type with masala.
+ */
 type extraChai = { masala: number };
+
+/**
+ * Intersection type combining base and extra chai.
+ */
 type MasalChai = baseChai & extraChai;
 const cup: MasalChai = {
   teaLeaves: 5,
@@ -73,6 +119,9 @@ console.log(cup);
 
 //option value
 
+/**
+ * User type with optional bio.
+ */
 type User = {
   username: string;
   bio?: string;
@@ -91,6 +140,9 @@ console.log(u1, u2);
 
 //readonly Value cannot be chenged after set once
 
+/**
+ * Config type with readonly app name.
+ */
 type Config = {
   readonly appName: string;
   version: number;

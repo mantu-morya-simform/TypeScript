@@ -1,8 +1,18 @@
+/**
+ * Demonstrates TypeScript union types and the `any` type.
+ */
+
 // 1.Union
 
+/**
+ * A value that can be either a number or a string.
+ */
 let subs: number | string = "1M";
 console.log(subs);
 
+/**
+ * An API request status using literal union types for valid states.
+ */
 let apiRequestStatus: "sucess" | "panding" | "reject" = "panding";
 apiRequestStatus = "sucess";
 // apiRequestStatus = "Mantu";     //not valid type error
