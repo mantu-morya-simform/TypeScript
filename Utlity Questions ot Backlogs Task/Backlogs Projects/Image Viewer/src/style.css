@@ -1,0 +1,33 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-container {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
+}
+
+.img-container:hover .img {
+  transform: scale(2);
+}

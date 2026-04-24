@@ -51,3 +51,14 @@ function identityThree<Type>(val: Type): Type {
 
 console.log(identityThree(3)); //function identityThree<3>(val: 3): 3
 console.log(identityThree("3")); // function identityThree<"3">(val: "3"): "3"
+
+interface Bottle {
+  brand: string;
+  type: string;
+}
+
+function identityBottle<T>(val: T): T {
+  return val;
+}
+
+console.log(identityBottle({ brand: "Milton", type: "Gym" }));
