@@ -1,7 +1,14 @@
-import { basicOprArgs, ItemStorage, SomeItem } from "./types.js";
+import type { basicOprArgs, ItemStorage, SomeItem } from "./types.js";
 
 export function sum({ firstArguments, secondArguments }: basicOprArgs) {
   return firstArguments + secondArguments;
+}
+
+export function multiplyNumbers({
+  firstArguments,
+  secondArguments,
+}: basicOprArgs): number {
+  return firstArguments * secondArguments;
 }
 
 export function doSomthing(name: string, weight: number): ItemStorage {

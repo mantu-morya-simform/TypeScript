@@ -31,11 +31,6 @@ export type basicOprArgs = {
 };
 
 /**
- * Multiply two numbers (declaration only).
- */
-export function multiplyNumbers(x: number, y: number): number;
-
-/**
  * Single item structure.
  */
 export type SomeItem = {
